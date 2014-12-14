@@ -14,6 +14,12 @@ class TestPluralize(unittest.TestCase):
         self.assertEqual(pluralize('cheval'), 'chevaux')
         self.assertEqual(pluralize('animal'), 'animaux')
 
+    def test_word_finishing_with_s_are_unchanged(self):
+        self.assertEqual(pluralize('souris'), 'souris')
+
+    def test_word_finishing_with_z_are_unchanged(self):
+        self.assertEqual(pluralize('nez'), 'nez')
+
 
 
 if __name__ == '__main__':
