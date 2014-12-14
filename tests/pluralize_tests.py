@@ -14,7 +14,7 @@ class TestPluralize(unittest.TestCase):
         self.assertEqual(pluralize('cheval'), 'chevaux')
         self.assertEqual(pluralize('animal'), 'animaux')
 
-    def test_some_words_finishing_with_al_are_special_cases(self):
+    def test_some_nouns_finishing_with_al_are_special_cases(self):
         self.assertEqual(pluralize('bal'), 'bals')
         self.assertEqual(pluralize('carnaval'), 'carnavals')
         self.assertEqual(pluralize('chacal'), 'chacals')
@@ -44,6 +44,19 @@ class TestPluralize(unittest.TestCase):
         self.assertEqual(pluralize('vantail'), 'vantaux')
         self.assertEqual(pluralize('ventail'), 'ventaux')
         self.assertEqual(pluralize('vitrail'), 'vitraux')
+
+    def test_word_finishing_with_au_have_aux_plural(self):
+        self.assertEqual(pluralize(u'château'), u'châteaux')
+        self.assertEqual(pluralize('noyau'), 'noyaux')
+    
+    def test_word_finishing_with_eu_have_eux_plural(self):
+        self.assertEqual(pluralize("feu"), "feux")
+        self.assertEqual(pluralize("pieu"), "pieux")
+
+    def test_some_words_finishing_with_eu_are_special_cases(self):
+        self.assertEqual(pluralize("pneu"), "pneus")
+        self.assertEqual(pluralize("bleu"), "bleus")
+ 
  
 
 

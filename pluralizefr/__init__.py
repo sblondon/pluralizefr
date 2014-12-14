@@ -5,6 +5,10 @@ def pluralize(word):
         return word + "s"
     elif word in ("bail", "corail", u"émail", "fermail", "soupirail", "travail", "vantail", "ventail", "vitrail"):
         return word[:-3] + "aux"
+    elif word in ("pneu", "bleu"):
+        return word + "s"
+    elif word.endswith("au") or word.endswith("eu"):
+        return word + "x"
     elif word.endswith("al"):
         return word[:-2] + "aux"
     elif word[-1] in ("s", "x", "z"):
