@@ -21,7 +21,14 @@ class TestPluralize(unittest.TestCase):
         self.assertEqual(pluralize('festival'), 'festivals')
         self.assertEqual(pluralize(u'récital'), u'récitals')
         self.assertEqual(pluralize(u'régal'), u'régals')
-
+    
+    def test_some_adjectives_finishing_with_al_are_special_cases(self):
+        self.assertEqual(pluralize("bancal"), "bancals")
+        self.assertEqual(pluralize("fatal"), "fatals")
+        self.assertEqual(pluralize("final"), "finals")
+        self.assertEqual(pluralize("natal"), "natals")
+        self.assertEqual(pluralize("naval"), "navals")
+ 
     def test_word_finishing_with_s_are_unchanged(self):
         self.assertEqual(pluralize('souris'), 'souris')
 

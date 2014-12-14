@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 def pluralize(word):
-    if word in ("bal", "carnaval", "chacal", "festival", u"récital", u"régal"):
+    if word in ("bal", "carnaval", "chacal", "festival", u"récital", u"régal",
+            "bancal", "fatal", "final", "natal", "naval"):
         return word + "s"
     elif word in ("bail", "corail", u"émail", "fermail", "soupirail", "travail", "vantail", "ventail", "vitrail"):
         return word[:-3] + "aux"
