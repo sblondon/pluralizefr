@@ -3,6 +3,8 @@
 def pluralize(word):
     if word in ("bal", "carnaval", "chacal", "festival", u"récital", u"régal"):
         return word + "s"
+    elif word in ("bail", "corail", u"émail", "fermail", "soupirail", "travail", "vantail", "ventail", "vitrail"):
+        return word[:-3] + "aux"
     elif word.endswith("al"):
         return word[:-2] + "aux"
     elif word[-1] in ("s", "x", "z"):
