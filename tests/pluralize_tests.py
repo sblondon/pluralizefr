@@ -10,6 +10,12 @@ class TestPluralize(unittest.TestCase):
         self.assertEqual(pluralize('fromage'), 'fromages')
         self.assertEqual(pluralize('jambon'), 'jambons')
 
+    def test_word_finishing_with_al_have_aux_plural(self):
+        self.assertEqual(pluralize('cheval'), 'chevaux')
+        self.assertEqual(pluralize('animal'), 'animaux')
+
+
 
 if __name__ == '__main__':
     unittest.main()
+
