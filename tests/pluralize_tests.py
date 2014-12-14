@@ -51,6 +51,7 @@ class TestPluralize(unittest.TestCase):
         self.assertEqual(pluralize(u'épouvantail'), u'épouvantails')
     
     def test_some_words_finishing_with_ail_are_special_cases(self):
+        self.assertEqual(pluralize('ail'), 'aulx')
         self.assertEqual(pluralize('bail'), 'baux')
         self.assertEqual(pluralize('corail'), 'coraux')
         self.assertEqual(pluralize(u'émail'), u'émaux')

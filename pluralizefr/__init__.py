@@ -11,7 +11,9 @@ def pluralize(word):
 
 def _ail_word(word):
     if word.endswith("ail"):
-        if word in ("bail", "corail", u"émail", "fermail", "soupirail", "travail", "vantail", "ventail", "vitrail"):
+        if word == "ail":
+            return "aulx"
+        elif word in ("bail", "corail", u"émail", "fermail", "soupirail", "travail", "vantail", "ventail", "vitrail"):
             return word[:-3] + "aux"
         return word + "s"
 
