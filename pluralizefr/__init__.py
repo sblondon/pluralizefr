@@ -8,6 +8,8 @@ def pluralize(word):
         return word[:-3] + "aux"
     elif word in ("pneu", "bleu"):
         return word + "s"
+    elif word in ("bijou", "caillou", "chou", "genou", "hibou", "joujou", "pou", ):
+        return word + "x"
     elif word.endswith("au") or word.endswith("eu"):
         return word + "x"
     elif word.endswith("al"):

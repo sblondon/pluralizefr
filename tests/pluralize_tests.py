@@ -29,6 +29,15 @@ class TestPluralize(unittest.TestCase):
         self.assertEqual(pluralize("natal"), "natals")
         self.assertEqual(pluralize("naval"), "navals")
  
+    def test_some_nouns_finishing_with_ou_are_special_cases(self):
+        self.assertEqual(pluralize("bijou"), "bijoux")
+        self.assertEqual(pluralize("caillou"), "cailloux")
+        self.assertEqual(pluralize("chou"), "choux")
+        self.assertEqual(pluralize("genou"), "genoux")
+        self.assertEqual(pluralize("hibou"), "hiboux")
+        self.assertEqual(pluralize("joujou"), "joujoux")
+        self.assertEqual(pluralize("pou"), "poux")
+
     def test_word_finishing_with_s_are_unchanged(self):
         self.assertEqual(pluralize('souris'), 'souris')
 
