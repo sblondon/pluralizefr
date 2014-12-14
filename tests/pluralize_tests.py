@@ -14,12 +14,22 @@ class TestPluralize(unittest.TestCase):
         self.assertEqual(pluralize('cheval'), 'chevaux')
         self.assertEqual(pluralize('animal'), 'animaux')
 
+    def test_some_words_finishing_with_al_are_special_cases(self):
+        self.assertEqual(pluralize('bal'), 'bals')
+        self.assertEqual(pluralize('carnaval'), 'carnavals')
+        self.assertEqual(pluralize('chacal'), 'chacals')
+        self.assertEqual(pluralize('festival'), 'festivals')
+        self.assertEqual(pluralize(u'récital'), u'récitals')
+        self.assertEqual(pluralize(u'régal'), u'régals')
+
     def test_word_finishing_with_s_are_unchanged(self):
         self.assertEqual(pluralize('souris'), 'souris')
 
+    def test_word_finishing_with_x_are_unchanged(self):
+        self.assertEqual(pluralize(u'époux'), u'époux')
+
     def test_word_finishing_with_z_are_unchanged(self):
         self.assertEqual(pluralize('nez'), 'nez')
-
 
 
 if __name__ == '__main__':

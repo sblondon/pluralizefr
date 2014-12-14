@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
 def pluralize(word):
-    if word.endswith("al"):
+    if word in ("bal", "carnaval", "chacal", "festival", u"récital", u"régal"):
+        return word + "s"
+    elif word.endswith("al"):
         return word[:-2] + "aux"
-    elif word.endswith("s") or word.endswith("z"):
+    elif word[-1] in ("s", "x", "z"):
         return word
     return word + "s"
 
