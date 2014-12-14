@@ -65,7 +65,11 @@ class TestPluralize(unittest.TestCase):
     def test_word_finishing_with_au_have_aux_plural(self):
         self.assertEqual(pluralize(u'château'), u'châteaux')
         self.assertEqual(pluralize('noyau'), 'noyaux')
-    
+
+    def test_some_words_finishing_with_eil_are_special_cases(self):
+        self.assertEqual(pluralize('vieil'), 'vieux')
+
+
     def test_word_finishing_with_eu_have_eux_plural(self):
         self.assertEqual(pluralize("feu"), "feux")
         self.assertEqual(pluralize("pieu"), "pieux")

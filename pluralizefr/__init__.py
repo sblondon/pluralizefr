@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 def pluralize(word):
-    for GRAMMAR_RULE in (_ail_word, _al_word, _au_word, _eu_word, _ou_word, _s_word, _x_word, _z_word,
+    for GRAMMAR_RULE in (_ail_word, _al_word, _au_word, _eil_word, _eu_word, _ou_word, _s_word, _x_word, _z_word,
             _default):
         plural = GRAMMAR_RULE(word)
         if plural:
@@ -27,6 +27,10 @@ def _al_word(word):
 def _au_word(word):
     if word.endswith("au"):
         return word + "x"
+
+def _eil_word(word):
+    if word.endswith("eil"):
+        return "vieux" if word == "vieil" else word + "s"
 
 def _eu_word(word):
     if word.endswith("eu"):
