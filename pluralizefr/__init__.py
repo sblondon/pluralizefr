@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 
+"""Pluralize word according French grammar rules
+
+Special cases are based on:
+http://fr.wiktionary.org/wiki/Annexe:Pluriels_irr%C3%A9guliers_en_fran%C3%A7ais
+"""
+
+
 def pluralize(word):
     for GRAMMAR_RULE in (_ail_word, _al_word, _au_word, _eil_word, _eu_word, _ou_word, _s_word, _x_word, _z_word,
             _default):
