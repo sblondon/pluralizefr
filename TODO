@@ -1,0 +1,5 @@
+
+- pluralize group of words like ('joli cheval' -> 'jolis chevaux')
+- pluralize uppercase words
+- keep singular or pluralize words according to an extra quantity parameter
+
