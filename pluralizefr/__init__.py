@@ -42,6 +42,8 @@ def _al_word(word):
 
 def _au_word(word):
     if word.endswith("au"):
+        if word in ("berimbau", "donau", "karbau", "landau", "pilau", "sarrau", "unau"):
+            return word + "s"
         return word + "x"
 
 def _eil_word(word):
