@@ -26,12 +26,13 @@ def _ail_word(word):
 
 def _al_word(word):
     if word.endswith("al"):
-        if word in ("bal", "carnaval", "chacal", "festival", u"récital", u"régal",
+        if word in (
+            "bal", "carnaval", "chacal", "festival", u"récital", u"régal",
             "bancal", "fatal", "fractal", "final", "morfal", "natal", "naval",
             u"aéronaval",
             u"anténatal", u"néonatal", u"périnatal", u"postnatal", u"prénatal",
             "tonal", "atonal", "bitonal", "polytonal",
-             "corral", "deal", "goal", "autogoal", "revival", "serial", "spiritual", "trial",
+            "corral", "deal", "goal", "autogoal", "revival", "serial", "spiritual", "trial",
             "caracal", "chacal", "gavial", "gayal", "narval", "quetzal", "rorqual", "serval",
             "metical", "rial", "riyal", "ryal",
             "cantal", "emmental", "emmenthal",
@@ -58,7 +59,9 @@ def _eu_word(word):
 
 def _ou_word(word):
     if word.endswith("ou"):
-        return word + "x" if word in ("bijou", "caillou", "chou", "genou", "hibou", "joujou", "pou") else word + "s"
+        if word in ("bijou", "caillou", "chou", "genou", "hibou", "joujou", "pou"):
+            return word + "x"
+        return word + "s"
 
 def _s_word(word):
     if word[-1] == "s":
