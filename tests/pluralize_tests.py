@@ -21,14 +21,59 @@ class TestPluralize(unittest.TestCase):
         self.assertEqual(pluralize('festival'), 'festivals')
         self.assertEqual(pluralize(u'récital'), u'récitals')
         self.assertEqual(pluralize(u'régal'), u'régals')
-    
+
+    def test_some_foreign_nouns_finishing_with_al_are_special_cases(self):
+        #english
+        self.assertEqual(pluralize("corral"), "corrals")
+        self.assertEqual(pluralize("deal"), "deals")
+        self.assertEqual(pluralize("goal"), "goals")
+        self.assertEqual(pluralize("autogoal"), "autogoals")
+        self.assertEqual(pluralize("revival"), "revivals")
+        self.assertEqual(pluralize("serial"), "serials")
+        self.assertEqual(pluralize("spiritual"), "spirituals")
+        self.assertEqual(pluralize("trial"), "trials")
+
+        #animals
+        self.assertEqual(pluralize("caracal"), "caracals")
+        self.assertEqual(pluralize("chacal"), "chacals")
+        self.assertEqual(pluralize("gavial"), "gavials")
+        self.assertEqual(pluralize("narval"), "narvals")
+        self.assertEqual(pluralize("quetzal"), "quetzals")
+        self.assertEqual(pluralize("rorqual"), "rorquals")
+        self.assertEqual(pluralize("serval"), "servals")
+
+        #currencies
+        self.assertEqual(pluralize("metical"), "meticals")
+        self.assertEqual(pluralize("rial"), "rials")
+        self.assertEqual(pluralize("riyal"), "riyals")
+        self.assertEqual(pluralize("ryal"), "ryals")
+
+    def test_some_words_based_on_proper_nouns_finishing_with_al_are_special_cases(self):
+        self.assertEqual(pluralize("cantal"), "cantals")
+        self.assertEqual(pluralize("emmental"), "emmentals")
+        self.assertEqual(pluralize("emmenthal"), "emmenthals")
+
+    def test_republican_months_finishing_with_al_are_special_cases(self):
+        self.assertEqual(pluralize(u"floréal"), u"floréals")
+        self.assertEqual(pluralize(u"germinal"), u"germinals")
+        self.assertEqual(pluralize(u"prairial"), u"prairials")
+
+
     def test_some_adjectives_finishing_with_al_are_special_cases(self):
         self.assertEqual(pluralize("bancal"), "bancals")
         self.assertEqual(pluralize("fatal"), "fatals")
+        self.assertEqual(pluralize("fractal"), "fractals")
         self.assertEqual(pluralize("final"), "finals")
+        self.assertEqual(pluralize("morfal"), "morfals")
         self.assertEqual(pluralize("natal"), "natals")
         self.assertEqual(pluralize("naval"), "navals")
+        self.assertEqual(pluralize(u"aéronaval"), u"aéronavals")
  
+        for PREFIX in (u"anté", u"néo", u"péri" , u"post", u"pré"):
+            self.assertEqual(pluralize(PREFIX + u"natal"), PREFIX + u"natals")
+        for PREFIX in (u"", u"a", u"bi", u"poly"):
+            self.assertEqual(pluralize(PREFIX + u"tonal"), PREFIX + u"tonals")
+
     def test_some_nouns_finishing_with_ou_are_special_cases(self):
         self.assertEqual(pluralize("bijou"), "bijoux")
         self.assertEqual(pluralize("caillou"), "cailloux")

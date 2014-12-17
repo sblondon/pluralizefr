@@ -27,7 +27,16 @@ def _ail_word(word):
 def _al_word(word):
     if word.endswith("al"):
         if word in ("bal", "carnaval", "chacal", "festival", u"récital", u"régal",
-            "bancal", "fatal", "final", "natal", "naval"):
+            "bancal", "fatal", "fractal", "final", "morfal", "natal", "naval",
+            u"aéronaval",
+            u"anténatal", u"néonatal", u"périnatal", u"postnatal", u"prénatal",
+            "tonal", "atonal", "bitonal", "polytonal",
+             "corral", "deal", "goal", "autogoal", "revival", "serial", "spiritual", "trial",
+            "caracal", "chacal", "gavial", "gayal", "narval", "quetzal", "rorqual", "serval",
+            "metical", "rial", "riyal", "ryal",
+            "cantal", "emmental", "emmenthal",
+            u"floréal", "germinal", "prairial",
+            ):
             return word + "s"
         return word[:-2] + "aux"
 
