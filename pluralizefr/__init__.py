@@ -52,7 +52,9 @@ def _eil_word(word):
 
 def _eu_word(word):
     if word.endswith("eu"):
-        return word + "s" if word in ("pneu", "bleu") else word + "x"
+        if word in ("bleu", u"émeu", "enfeu", "pneu", "rebeu"):
+            return word + "s"
+        return word + "x"
 
 def _ou_word(word):
     if word.endswith("ou"):

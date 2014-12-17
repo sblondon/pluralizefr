@@ -125,12 +125,15 @@ class TestPluralize(unittest.TestCase):
 
 
     def test_word_finishing_with_eu_have_eux_plural(self):
-        self.assertEqual(pluralize("feu"), "feux")
+        self.assertEqual(pluralize("adieu"), "adieux")
         self.assertEqual(pluralize("pieu"), "pieux")
 
     def test_some_words_finishing_with_eu_are_special_cases(self):
-        self.assertEqual(pluralize("pneu"), "pneus")
         self.assertEqual(pluralize("bleu"), "bleus")
+        self.assertEqual(pluralize(u"émeu"), u"émeus")
+        self.assertEqual(pluralize("enfeu"), "enfeus")
+        self.assertEqual(pluralize("pneu"), "pneus")
+        self.assertEqual(pluralize("rebeu"), "rebeus")
  
  
 
