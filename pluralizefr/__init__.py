@@ -77,4 +77,36 @@ def _z_word(word):
  
 def _default(word):
     return word + "s"
+    
+#SINGULARIZE
+
+def Singularize(word):
+    for GRAMMAR_RULE in (_ail_word_sing, _ou_word_sing, _s_word_sing, _default_sing):
+        singular = GRAMMAR_RULE(word)
+        if singular:
+            return singular
+			
+def _ail_word_sing(word):
+	if word.endswith("aux"):
+		if word in ("baux", "coraux", u"émaux", "fermaux", "soupiraux", "travaux", "vantaux", "ventaux", "vitraux"):
+			return word[:-3] + "ail"
+		else:
+			return word[:-3] + "al"
+			
+def _ou_word_sing(word):
+    if word.endswith("oux"):
+		if word in ("bijoux", "cailloux", "choux", "genoux", "hiboux", "joujoux", "poux"):
+			return word[:-1]
+		else:
+			return word
+			
+def _s_word_sing(word):
+	if word.endswith("s"):
+		if word in (u"abcès", u"accès", "abus", "albatros", "anchois", "anglais", "autobus", "brebis", "carquois", "cas", "chas", "colis", "concours", "corps", "cours", u"cyprès", u"décès", "devis", "discours", "dos", "embarras", "engrais", "entrelacs", u"excès", "fois", "fonds", u"gâchis", "gars", "glas", "guet-apens", u"héros", "intrus", "jars", "jus", u"kermès", "lacis", "legs", "lilas", "marais", "matelas", u"mépris", "mets", "mois", "mors", "obus", "os", "palais", "paradis", "parcours", "pardessus", "pays", "plusieurs", "poids", "pois", "pouls", "printemps", "processus", u"progrès", "puits", "pus", "rabais", "radis", "recors", "recours", "refus", "relais", "remords", "remous", u"rhinocéros", "repas", "rubis", "sas", "secours", "souris", u"succès", "talus", "tapis", "taudis", "temps", "tiers", "univers", "velours", "verglas", "vernis", "virus", "accordailles", "affres", "aguets", "alentours", "ambages", "annales", "appointements", "archives", "armoiries", u"arrérages", "arrhes", "calendes", "cliques", "complies", u"condoléances", "confins", u"dépens", u"ébats", "entrailles", u"épousailles", "errements", "fiançailles", "frais", u"funérailles", "gens", "honoraires", "matines", "mœurs", u"obsèques", u"pénates", "pierreries", u"préparatifs", "relevailles", "rillettes", u"sévices", u"ténèbres", "thermes", "us", u"vêpres", "victuailles"):
+			return word
+		else:
+			return word[:-1]
+			
+def _default_sing(word):
+	return word
 
