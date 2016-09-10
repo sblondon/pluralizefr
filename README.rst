@@ -1,8 +1,8 @@
-===============================
+================
 French Pluralize
-===============================
+================
 
-convert de singular word into plural according french grammar rule.
+convert a singular word into plural according french grammar rules.
 
 Usable as Jinja2 filter.
 
