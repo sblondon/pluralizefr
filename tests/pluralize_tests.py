@@ -5,20 +5,22 @@ import unittest
 from pluralizefr import pluralize, singularize
 
 
-class TestDefault(unittest.TestCase):
+class _Test(unittest.TestCase):
+    def check(self, single, plural):
+        self.assertEqual(pluralize(single), plural)
+        self.assertEqual(singularize(plural), single)
+
+
+class TestDefault(_Test):
     def test_append_an_s_to_a_word(self):
-        self.assertEqual(pluralize("fromage"), "fromages")
-        self.assertEqual(pluralize("jambon"), "jambons")
-        self.assertEqual(singularize("fromages"), "fromage")
-        self.assertEqual(singularize("jambons"), "jambon")
+        self.check("fromage", "fromages")
+        self.check("jambon", "jambons")
 
 
-class TestWordEndsWithAl(unittest.TestCase):
+class TestWordEndsWithAl(_Test):
     def test_words_have_aux_plural(self):
-        self.assertEqual(pluralize("cheval"), "chevaux")
-        self.assertEqual(pluralize("animal"), "animaux")
-        self.assertEqual(singularize("chevaux"), "cheval")
-        self.assertEqual(singularize("animaux"), "animal")
+        self.check("cheval", "chevaux")
+        self.check("animal", "animaux")
 
     def test_some_nouns_are_special_cases(self):
         self.assertEqual(pluralize("bal"), "bals")
