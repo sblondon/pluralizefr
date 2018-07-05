@@ -2,17 +2,23 @@
 
 import unittest
 
-from pluralizefr import pluralize
+from pluralizefr import pluralize, singularize
 
 
-class TestPluralize(unittest.TestCase):
+class TestDefault(unittest.TestCase):
     def test_by_default_append_an_s_to_a_word(self):
         self.assertEqual(pluralize("fromage"), "fromages")
         self.assertEqual(pluralize("jambon"), "jambons")
+        self.assertEqual(singularize("fromages"), "fromage")
+        self.assertEqual(singularize("jambons"), "jambon")
 
+
+class TestWordEndsWithAl(unittest.TestCase):
     def test_word_finishing_with_al_have_aux_plural(self):
         self.assertEqual(pluralize("cheval"), "chevaux")
         self.assertEqual(pluralize("animal"), "animaux")
+        self.assertEqual(singularize("chevaux"), "cheval")
+        self.assertEqual(singularize("animaux"), "animal")
 
     def test_some_nouns_finishing_with_al_are_special_cases(self):
         self.assertEqual(pluralize("bal"), "bals")
@@ -74,6 +80,8 @@ class TestPluralize(unittest.TestCase):
         for PREFIX in (u"", u"a", u"bi", u"poly"):
             self.assertEqual(pluralize(PREFIX + u"tonal"), PREFIX + u"tonals")
 
+
+class TestWordEndsWithOu(unittest.TestCase):
     def test_some_nouns_finishing_with_ou_are_special_cases(self):
         self.assertEqual(pluralize("bijou"), "bijoux")
         self.assertEqual(pluralize("caillou"), "cailloux")
@@ -83,6 +91,8 @@ class TestPluralize(unittest.TestCase):
         self.assertEqual(pluralize("joujou"), "joujoux")
         self.assertEqual(pluralize("pou"), "poux")
 
+
+class TestUnchangedWord(unittest.TestCase):
     def test_word_finishing_with_s_are_unchanged(self):
         self.assertEqual(pluralize("souris"), "souris")
 
@@ -92,6 +102,8 @@ class TestPluralize(unittest.TestCase):
     def test_word_finishing_with_z_are_unchanged(self):
         self.assertEqual(pluralize("nez"), "nez")
 
+
+class TestWordEndsWithAil(unittest.TestCase):
     def test_word_finishing_with_ail_have_s_plural(self):
         self.assertEqual(pluralize(u"épouvantail"), u"épouvantails")
     
@@ -107,6 +119,8 @@ class TestPluralize(unittest.TestCase):
         self.assertEqual(pluralize("ventail"), "ventaux")
         self.assertEqual(pluralize("vitrail"), "vitraux")
 
+
+class TestWordEndsWithAu(unittest.TestCase):
     def test_word_finishing_with_au_have_aux_plural(self):
         self.assertEqual(pluralize(u"château"), u"châteaux")
         self.assertEqual(pluralize("noyau"), "noyaux")
@@ -120,10 +134,13 @@ class TestPluralize(unittest.TestCase):
         self.assertEqual(pluralize("sarrau"), "sarraus")
         self.assertEqual(pluralize("unau"), "unaus")
 
+
+class TestWordEndsWithEil(unittest.TestCase):
     def test_some_words_finishing_with_eil_are_special_cases(self):
         self.assertEqual(pluralize("vieil"), "vieux")
 
 
+class TestWordEndsWithEu(unittest.TestCase):
     def test_word_finishing_with_eu_have_eux_plural(self):
         self.assertEqual(pluralize("adieu"), "adieux")
         self.assertEqual(pluralize("pieu"), "pieux")
