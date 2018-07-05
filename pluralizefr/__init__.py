@@ -78,9 +78,8 @@ def _z_word(word):
 def _default(word):
     return word + "s"
 
-#SINGULARIZE
 
-def Singularize(word):
+def singularize(word):
     for GRAMMAR_RULE in (_ail_word_sing, _ou_word_sing, _s_word_sing, _default_sing):
         singular = GRAMMAR_RULE(word)
         if singular:
