@@ -6,7 +6,7 @@ from pluralizefr import pluralize, singularize
 
 
 class TestDefault(unittest.TestCase):
-    def test_by_default_append_an_s_to_a_word(self):
+    def test_append_an_s_to_a_word(self):
         self.assertEqual(pluralize("fromage"), "fromages")
         self.assertEqual(pluralize("jambon"), "jambons")
         self.assertEqual(singularize("fromages"), "fromage")
@@ -14,13 +14,13 @@ class TestDefault(unittest.TestCase):
 
 
 class TestWordEndsWithAl(unittest.TestCase):
-    def test_word_finishing_with_al_have_aux_plural(self):
+    def test_words_have_aux_plural(self):
         self.assertEqual(pluralize("cheval"), "chevaux")
         self.assertEqual(pluralize("animal"), "animaux")
         self.assertEqual(singularize("chevaux"), "cheval")
         self.assertEqual(singularize("animaux"), "animal")
 
-    def test_some_nouns_finishing_with_al_are_special_cases(self):
+    def test_some_nouns_are_special_cases(self):
         self.assertEqual(pluralize("bal"), "bals")
         self.assertEqual(pluralize("carnaval"), "carnavals")
         self.assertEqual(pluralize("chacal"), "chacals")
@@ -28,7 +28,7 @@ class TestWordEndsWithAl(unittest.TestCase):
         self.assertEqual(pluralize(u"récital"), u"récitals")
         self.assertEqual(pluralize(u"régal"), u"régals")
 
-    def test_some_foreign_nouns_finishing_with_al_are_special_cases(self):
+    def test_some_foreign_nouns_are_special_cases(self):
         #english
         self.assertEqual(pluralize("corral"), "corrals")
         self.assertEqual(pluralize("deal"), "deals")
@@ -54,18 +54,17 @@ class TestWordEndsWithAl(unittest.TestCase):
         self.assertEqual(pluralize("riyal"), "riyals")
         self.assertEqual(pluralize("ryal"), "ryals")
 
-    def test_some_words_based_on_proper_nouns_finishing_with_al_are_special_cases(self):
+    def test_some_words_based_on_proper_nouns_are_special_cases(self):
         self.assertEqual(pluralize("cantal"), "cantals")
         self.assertEqual(pluralize("emmental"), "emmentals")
         self.assertEqual(pluralize("emmenthal"), "emmenthals")
 
-    def test_republican_months_finishing_with_al_are_special_cases(self):
+    def test_republican_months_are_special_cases(self):
         self.assertEqual(pluralize(u"floréal"), u"floréals")
         self.assertEqual(pluralize(u"germinal"), u"germinals")
         self.assertEqual(pluralize(u"prairial"), u"prairials")
 
-
-    def test_some_adjectives_finishing_with_al_are_special_cases(self):
+    def test_some_adjectives_are_special_cases(self):
         self.assertEqual(pluralize("bancal"), "bancals")
         self.assertEqual(pluralize("fatal"), "fatals")
         self.assertEqual(pluralize("fractal"), "fractals")
@@ -74,7 +73,7 @@ class TestWordEndsWithAl(unittest.TestCase):
         self.assertEqual(pluralize("natal"), "natals")
         self.assertEqual(pluralize("naval"), "navals")
         self.assertEqual(pluralize(u"aéronaval"), u"aéronavals")
- 
+
         for PREFIX in (u"anté", u"néo", u"péri" , u"post", u"pré"):
             self.assertEqual(pluralize(PREFIX + u"natal"), PREFIX + u"natals")
         for PREFIX in (u"", u"a", u"bi", u"poly"):
@@ -82,7 +81,7 @@ class TestWordEndsWithAl(unittest.TestCase):
 
 
 class TestWordEndsWithOu(unittest.TestCase):
-    def test_some_nouns_finishing_with_ou_are_special_cases(self):
+    def test_some_nouns_are_special_cases(self):
         self.assertEqual(pluralize("bijou"), "bijoux")
         self.assertEqual(pluralize("caillou"), "cailloux")
         self.assertEqual(pluralize("chou"), "choux")
@@ -93,21 +92,21 @@ class TestWordEndsWithOu(unittest.TestCase):
 
 
 class TestUnchangedWord(unittest.TestCase):
-    def test_word_finishing_with_s_are_unchanged(self):
+    def test_words_finishing_with_s_are_unchanged(self):
         self.assertEqual(pluralize("souris"), "souris")
 
-    def test_word_finishing_with_x_are_unchanged(self):
+    def test_words_finishing_with_x_are_unchanged(self):
         self.assertEqual(pluralize(u"époux"), u"époux")
 
-    def test_word_finishing_with_z_are_unchanged(self):
+    def test_words_finishing_with_z_are_unchanged(self):
         self.assertEqual(pluralize("nez"), "nez")
 
 
 class TestWordEndsWithAil(unittest.TestCase):
-    def test_word_finishing_with_ail_have_s_plural(self):
+    def test_words_have_s_plural(self):
         self.assertEqual(pluralize(u"épouvantail"), u"épouvantails")
-    
-    def test_some_words_finishing_with_ail_are_special_cases(self):
+
+    def test_some_words_are_special_cases(self):
         self.assertEqual(pluralize("ail"), "aulx")
         self.assertEqual(pluralize("bail"), "baux")
         self.assertEqual(pluralize("corail"), "coraux")
@@ -121,11 +120,11 @@ class TestWordEndsWithAil(unittest.TestCase):
 
 
 class TestWordEndsWithAu(unittest.TestCase):
-    def test_word_finishing_with_au_have_aux_plural(self):
+    def test_words_have_aux_plural(self):
         self.assertEqual(pluralize(u"château"), u"châteaux")
         self.assertEqual(pluralize("noyau"), "noyaux")
 
-    def test_some_words_finishing_with_au_are_special_cases(self):
+    def test_some_words_are_special_cases(self):
         self.assertEqual(pluralize("berimbau"), "berimbaus")
         self.assertEqual(pluralize("donau"), "donaus")
         self.assertEqual(pluralize("karbau"), "karbaus")
@@ -136,23 +135,22 @@ class TestWordEndsWithAu(unittest.TestCase):
 
 
 class TestWordEndsWithEil(unittest.TestCase):
-    def test_some_words_finishing_with_eil_are_special_cases(self):
+    def test_some_words_are_special_cases(self):
         self.assertEqual(pluralize("vieil"), "vieux")
 
 
 class TestWordEndsWithEu(unittest.TestCase):
-    def test_word_finishing_with_eu_have_eux_plural(self):
+    def test_words_have_eux_plural(self):
         self.assertEqual(pluralize("adieu"), "adieux")
         self.assertEqual(pluralize("pieu"), "pieux")
 
-    def test_some_words_finishing_with_eu_are_special_cases(self):
+    def test_some_words_are_special_cases(self):
         self.assertEqual(pluralize("bleu"), "bleus")
         self.assertEqual(pluralize(u"émeu"), u"émeus")
         self.assertEqual(pluralize("enfeu"), "enfeus")
         self.assertEqual(pluralize("pneu"), "pneus")
         self.assertEqual(pluralize("rebeu"), "rebeus")
- 
- 
+
 
 
 if __name__ == "__main__":
