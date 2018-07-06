@@ -82,46 +82,46 @@ class TestWordEndsWithAl(_Test):
             self.assertEqual(pluralize(PREFIX + u"tonal"), PREFIX + u"tonals")
 
 
-class TestWordEndsWithOu(unittest.TestCase):
+class TestWordEndsWithOu(_Test):
     def test_some_nouns_are_special_cases(self):
-        self.assertEqual(pluralize("bijou"), "bijoux")
-        self.assertEqual(pluralize("caillou"), "cailloux")
-        self.assertEqual(pluralize("chou"), "choux")
-        self.assertEqual(pluralize("genou"), "genoux")
-        self.assertEqual(pluralize("hibou"), "hiboux")
-        self.assertEqual(pluralize("joujou"), "joujoux")
-        self.assertEqual(pluralize("pou"), "poux")
+        self.check("bijou", "bijoux")
+        self.check("caillou", "cailloux")
+        self.check("chou", "choux")
+        self.check("genou", "genoux")
+        self.check("hibou", "hiboux")
+        self.check("joujou", "joujoux")
+        self.check("pou", "poux")
 
 
-class TestUnchangedWord(unittest.TestCase):
+class TestUnchangedWord(_Test):
     def test_words_finishing_with_s_are_unchanged(self):
-        self.assertEqual(pluralize("souris"), "souris")
+        self.check("souris", "souris")
 
     def test_words_finishing_with_x_are_unchanged(self):
-        self.assertEqual(pluralize(u"époux"), u"époux")
+        self.check(u"époux", u"époux")
 
     def test_words_finishing_with_z_are_unchanged(self):
-        self.assertEqual(pluralize("nez"), "nez")
+        self.check("nez", "nez")
 
 
-class TestWordEndsWithAil(unittest.TestCase):
+class TestWordEndsWithAil(_Test):
     def test_words_have_s_plural(self):
-        self.assertEqual(pluralize(u"épouvantail"), u"épouvantails")
+        self.check(u"épouvantail", u"épouvantails")
 
     def test_some_words_are_special_cases(self):
         self.assertEqual(pluralize("ail"), "aulx")
-        self.assertEqual(pluralize("bail"), "baux")
-        self.assertEqual(pluralize("corail"), "coraux")
-        self.assertEqual(pluralize(u"émail"), u"émaux")
-        self.assertEqual(pluralize("fermail"), "fermaux")
-        self.assertEqual(pluralize("soupirail"), "soupiraux")
-        self.assertEqual(pluralize("travail"), "travaux")
-        self.assertEqual(pluralize("vantail"), "vantaux")
-        self.assertEqual(pluralize("ventail"), "ventaux")
-        self.assertEqual(pluralize("vitrail"), "vitraux")
+        self.check("bail", "baux")
+        self.check("corail", "coraux")
+        self.check(u"émail", u"émaux")
+        self.check("fermail", "fermaux")
+        self.check("soupirail", "soupiraux")
+        self.check("travail", "travaux")
+        self.check("vantail", "vantaux")
+        self.check("ventail", "ventaux")
+        self.check("vitrail", "vitraux")
 
 
-class TestWordEndsWithAu(unittest.TestCase):
+class TestWordEndsWithAu(_Test):
     def test_words_have_aux_plural(self):
         self.assertEqual(pluralize(u"château"), u"châteaux")
         self.assertEqual(pluralize("noyau"), "noyaux")
