@@ -126,17 +126,17 @@ class TestWordEndsWithAil(_Test):
 
 class TestWordEndsWithAu(_Test):
     def test_words_have_aux_plural(self):
-        self.assertEqual(pluralize(u"château"), u"châteaux")
-        self.assertEqual(pluralize("noyau"), "noyaux")
+        self.assertEquals(pluralize(u"château"), u"châteaux")
+        self.assertEquals(pluralize("noyau"), "noyaux")
 
     def test_some_words_are_special_cases(self):
-        self.assertEqual(pluralize("berimbau"), "berimbaus")
-        self.assertEqual(pluralize("donau"), "donaus")
-        self.assertEqual(pluralize("karbau"), "karbaus")
-        self.assertEqual(pluralize("landau"), "landaus")
-        self.assertEqual(pluralize("pilau"), "pilaus")
-        self.assertEqual(pluralize("sarrau"), "sarraus")
-        self.assertEqual(pluralize("unau"), "unaus")
+        self.check("berimbau", "berimbaus")
+        self.check("donau", "donaus")
+        self.check("karbau", "karbaus")
+        self.check("landau", "landaus")
+        self.check("pilau", "pilaus")
+        self.check("sarrau", "sarraus")
+        self.check("unau", "unaus")
 
 
 class TestWordEndsWithEil(_Test):
