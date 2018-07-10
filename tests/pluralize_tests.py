@@ -112,7 +112,7 @@ class TestWordEndsWithAil(_Test):
         self.check(u"épouvantail", u"épouvantails")
 
     def test_some_words_are_special_cases(self):
-        self.assertEqual(pluralize("ail"), "aulx")
+        self.check("ail", "aulx")
         self.check("bail", "baux")
         self.check("corail", "coraux")
         self.check(u"émail", u"émaux")

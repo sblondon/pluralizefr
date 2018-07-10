@@ -86,6 +86,8 @@ def singularize(word):
             return singular
 
 def _ail_word_sing(word):
+    if word == "aulx":
+        return "ail"
     if word.endswith("aux"):
         if word in ("baux", "coraux", u"émaux", "fermaux", "soupiraux", "travaux", "vantaux", "ventaux", "vitraux"):
             return word[:-3] + "ail"
