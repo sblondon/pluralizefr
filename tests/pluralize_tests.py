@@ -144,17 +144,17 @@ class TestWordEndsWithEil(unittest.TestCase):
         self.assertEqual(pluralize("vieil"), "vieux")
 
 
-class TestWordEndsWithEu(unittest.TestCase):
+class TestWordEndsWithEu(_Test):
     def test_words_have_eux_plural(self):
-        self.assertEqual(pluralize("adieu"), "adieux")
-        self.assertEqual(pluralize("pieu"), "pieux")
+        self.check("adieu", "adieux")
+        self.check("pieu", "pieux")
 
     def test_some_words_are_special_cases(self):
-        self.assertEqual(pluralize("bleu"), "bleus")
-        self.assertEqual(pluralize(u"émeu"), u"émeus")
-        self.assertEqual(pluralize("enfeu"), "enfeus")
-        self.assertEqual(pluralize("pneu"), "pneus")
-        self.assertEqual(pluralize("rebeu"), "rebeus")
+        self.check("bleu", "bleus")
+        self.check(u"émeu", u"émeus")
+        self.check("enfeu", "enfeus")
+        self.check("pneu", "pneus")
+        self.check("rebeu", "rebeus")
 
 
 
