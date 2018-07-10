@@ -83,6 +83,9 @@ class TestWordEndsWithAl(_Test):
 
 
 class TestWordEndsWithOu(_Test):
+    def test_default(self):
+        self.check("fou", "fous")
+
     def test_some_nouns_are_special_cases(self):
         self.check("bijou", "bijoux")
         self.check("caillou", "cailloux")
