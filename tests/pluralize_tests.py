@@ -139,9 +139,12 @@ class TestWordEndsWithAu(_Test):
         self.assertEqual(pluralize("unau"), "unaus")
 
 
-class TestWordEndsWithEil(unittest.TestCase):
+class TestWordEndsWithEil(_Test):
+    def test_default(self):
+        self.check("orteil", "orteils")
+
     def test_some_words_are_special_cases(self):
-        self.assertEqual(pluralize("vieil"), "vieux")
+        self.check("vieil", "vieux")
 
 
 class TestWordEndsWithEu(_Test):
