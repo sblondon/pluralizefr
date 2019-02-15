@@ -80,10 +80,14 @@ def _default(word):
 
 
 def singularize(word):
-    for GRAMMAR_RULE in (_ail_word_sing, _eil_word_sing, _eu_word_sing, _ou_word_sing, _s_word_sing, _default_sing):
+    for GRAMMAR_RULE in (_eau_word_sing, _ail_word_sing, _eil_word_sing, _eu_word_sing, _ou_word_sing, _s_word_sing, _default_sing):
         singular = GRAMMAR_RULE(word)
         if singular:
             return singular
+
+def _eau_word_sing(word):
+    if word.endswith("eaux"):
+        return word[:-1]
 
 def _ail_word_sing(word):
     if word == "aulx":
