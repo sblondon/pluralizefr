@@ -2,7 +2,9 @@
 French Pluralize
 ================
 
-convert a singular word into plural according french grammar rules.
+Convert a singular word into plural according french grammar rules.
+Plural to singular is available too (but some special cases are probably missing).
+
 
 Usable as Jinja2 filter.
 
@@ -21,6 +23,7 @@ Features
 
     import pluralizefr
     pluralizefr.pluralize("fromage") # return fromages
+    pluralizefr.singularize("fromages") # return fromage
 
 
 2. Jinja2 exemple:
