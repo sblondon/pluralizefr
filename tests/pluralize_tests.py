@@ -22,6 +22,10 @@ class TestWordEndsWithAl(_Test):
         self.check("cheval", "chevaux")
         self.check("animal", "animaux")
 
+    def test_words_have_eaux(self):
+        self.check("bateau", "bateaux")
+        self.check("moineau", "moineaux")
+
     def test_some_nouns_are_special_cases(self):
         self.assertEqual(pluralize("bal"), "bals")
         self.assertEqual(pluralize("carnaval"), "carnavals")
@@ -163,4 +167,3 @@ class TestWordEndsWithEu(_Test):
 
 if __name__ == "__main__":
     unittest.main()
-
