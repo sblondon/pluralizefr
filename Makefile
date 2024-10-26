@@ -13,6 +13,13 @@ clean:
 	rm -rf dist
 
 dist: clean
-	python setup.py sdist
+	python3 -m venv venv
+	. ./venv/bin/activate
+	python3 -m pip install --upgrade pip
+	python3 -m pip install --upgrade build
+	python3 -m build
 	ls -l dist
 
+publish:
+	. ./venv/bin/activate
+	python3 -m pip install --upgrade twine

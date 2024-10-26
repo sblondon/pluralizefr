@@ -1,0 +1,27 @@
+[project]
+name = "pluralizefr"
+version = "0.0.1"
+authors = [
+  { name="Yaal Coop", email="contact@yaal.coop" },
+]
+description = "pluralize for french language"
+readme = "README.rst"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/sblondon/pluralizefr"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+exclude = [
+  "Makefile",
+  "TODO",
+]
