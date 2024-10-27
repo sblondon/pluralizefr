@@ -5,7 +5,10 @@ help:
 	@echo "dist - create library archive"
 
 check:
-	python setup.py test
+	python3 -m venv venv
+	. ./venv/bin/activate
+	python3 -m pip install pytest
+	pytest tests/pluralize_tests.py
 
 clean:
 	find . -name '*.pyc' -delete 
