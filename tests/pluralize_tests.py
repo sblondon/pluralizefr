@@ -31,8 +31,8 @@ class TestWordEndsWithAl(_Test):
         self.assertEqual(pluralize("carnaval"), "carnavals")
         self.assertEqual(pluralize("chacal"), "chacals")
         self.assertEqual(pluralize("festival"), "festivals")
-        self.assertEqual(pluralize(u"récital"), u"récitals")
-        self.assertEqual(pluralize(u"régal"), u"régals")
+        self.assertEqual(pluralize("récital"), "récitals")
+        self.assertEqual(pluralize("régal"), "régals")
 
     def test_some_foreign_nouns_are_special_cases(self):
         #english
@@ -66,9 +66,9 @@ class TestWordEndsWithAl(_Test):
         self.assertEqual(pluralize("emmenthal"), "emmenthals")
 
     def test_republican_months_are_special_cases(self):
-        self.assertEqual(pluralize(u"floréal"), u"floréals")
-        self.assertEqual(pluralize(u"germinal"), u"germinals")
-        self.assertEqual(pluralize(u"prairial"), u"prairials")
+        self.assertEqual(pluralize("floréal"), "floréals")
+        self.assertEqual(pluralize("germinal"), "germinals")
+        self.assertEqual(pluralize("prairial"), "prairials")
 
     def test_some_adjectives_are_special_cases(self):
         self.assertEqual(pluralize("bancal"), "bancals")
@@ -78,12 +78,12 @@ class TestWordEndsWithAl(_Test):
         self.assertEqual(pluralize("morfal"), "morfals")
         self.assertEqual(pluralize("natal"), "natals")
         self.assertEqual(pluralize("naval"), "navals")
-        self.assertEqual(pluralize(u"aéronaval"), u"aéronavals")
+        self.assertEqual(pluralize("aéronaval"), "aéronavals")
 
-        for PREFIX in (u"anté", u"néo", u"péri" , u"post", u"pré"):
-            self.assertEqual(pluralize(PREFIX + u"natal"), PREFIX + u"natals")
-        for PREFIX in (u"", u"a", u"bi", u"poly"):
-            self.assertEqual(pluralize(PREFIX + u"tonal"), PREFIX + u"tonals")
+        for PREFIX in ("anté", "néo", "péri" , "post", "pré"):
+            self.assertEqual(pluralize(PREFIX + "natal"), PREFIX + "natals")
+        for PREFIX in ("", "a", "bi", "poly"):
+            self.assertEqual(pluralize(PREFIX + "tonal"), PREFIX + "tonals")
 
 
 class TestWordEndsWithOu(_Test):
@@ -105,7 +105,7 @@ class TestUnchangedWord(_Test):
         self.check("souris", "souris")
 
     def test_words_finishing_with_x_are_unchanged(self):
-        self.check(u"époux", u"époux")
+        self.check("époux", "époux")
 
     def test_words_finishing_with_z_are_unchanged(self):
         self.check("nez", "nez")
@@ -113,13 +113,13 @@ class TestUnchangedWord(_Test):
 
 class TestWordEndsWithAil(_Test):
     def test_words_have_s_plural(self):
-        self.check(u"épouvantail", u"épouvantails")
+        self.check("épouvantail", "épouvantails")
 
     def test_some_words_are_special_cases(self):
         self.check("ail", "aulx")
         self.check("bail", "baux")
         self.check("corail", "coraux")
-        self.check(u"émail", u"émaux")
+        self.check("émail", "émaux")
         self.check("fermail", "fermaux")
         self.check("soupirail", "soupiraux")
         self.check("travail", "travaux")
@@ -130,7 +130,7 @@ class TestWordEndsWithAil(_Test):
 
 class TestWordEndsWithAu(_Test):
     def test_words_have_aux_plural(self):
-        self.assertEqual(pluralize(u"château"), u"châteaux")
+        self.assertEqual(pluralize("château"), "châteaux")
         self.assertEqual(pluralize("noyau"), "noyaux")
 
     def test_some_words_are_special_cases(self):
@@ -158,7 +158,7 @@ class TestWordEndsWithEu(_Test):
 
     def test_some_words_are_special_cases(self):
         self.check("bleu", "bleus")
-        self.check(u"émeu", u"émeus")
+        self.check("émeu", "émeus")
         self.check("enfeu", "enfeus")
         self.check("pneu", "pneus")
         self.check("rebeu", "rebeus")
