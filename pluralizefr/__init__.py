@@ -23,23 +23,23 @@ def _ail_word(word):
     if word.endswith("ail"):
         if word == "ail":
             return "aulx"
-        elif word in ("bail", "corail", u"émail", "fermail", "soupirail", "travail", "vantail", "ventail", "vitrail"):
+        elif word in ("bail", "corail", "émail", "fermail", "soupirail", "travail", "vantail", "ventail", "vitrail"):
             return word[:-3] + "aux"
         return word + "s"
 
 def _al_word(word):
     if word.endswith("al"):
         if word in (
-            "bal", "carnaval", "chacal", "festival", u"récital", u"régal",
+            "bal", "carnaval", "chacal", "festival", "récital", "régal",
             "bancal", "fatal", "fractal", "final", "morfal", "natal", "naval",
-            u"aéronaval",
-            u"anténatal", u"néonatal", u"périnatal", "postnatal", u"prénatal",
+            "aéronaval",
+            "anténatal", "néonatal", "périnatal", "postnatal", "prénatal",
             "tonal", "atonal", "bitonal", "polytonal",
             "corral", "deal", "goal", "autogoal", "revival", "serial", "spiritual", "trial",
             "caracal", "chacal", "gavial", "gayal", "narval", "quetzal", "rorqual", "serval",
             "metical", "rial", "riyal", "ryal",
             "cantal", "emmental", "emmenthal",
-            u"floréal", "germinal", "prairial",
+            "floréal", "germinal", "prairial",
             ):
             return word + "s"
         return word[:-2] + "aux"
@@ -56,7 +56,7 @@ def _eil_word(word):
 
 def _eu_word(word):
     if word.endswith("eu"):
-        if word in ("bleu", u"émeu", "enfeu", "pneu", "rebeu"):
+        if word in ("bleu", "émeu", "enfeu", "pneu", "rebeu"):
             return word + "s"
         return word + "x"
 
@@ -99,7 +99,7 @@ def _ail_word_sing(word):
     if word == "aulx":
         return "ail"
     if word.endswith("aux"):
-        if word in ("baux", "coraux", u"émaux", "fermaux", "soupiraux", "travaux", "vantaux", "ventaux", "vitraux"):
+        if word in ("baux", "coraux", "émaux", "fermaux", "soupiraux", "travaux", "vantaux", "ventaux", "vitraux"):
             return word[:-3] + "ail"
         else:
             return word[:-3] + "al"
@@ -121,7 +121,7 @@ def _ou_word_sing(word):
 
 def _s_word_sing(word):
     if word.endswith("s"):
-        if word in (u"abcès", u"accès", "abus", "albatros", "anchois", "anglais", "autobus", "brebis", "carquois", "cas", "chas", "colis", "concours", "corps", "cours", u"cyprès", u"décès", "devis", "discours", "dos", "embarras", "engrais", "entrelacs", u"excès", "fois", "fonds", u"gâchis", "gars", "glas", "guet-apens", u"héros", "intrus", "jars", "jus", u"kermès", "lacis", "legs", "lilas", "marais", "matelas", u"mépris", "mets", "mois", "mors", "obus", "os", "palais", "paradis", "parcours", "pardessus", "pays", "plusieurs", "poids", "pois", "pouls", "printemps", "processus", u"progrès", "puits", "pus", "rabais", "radis", "recors", "recours", "refus", "relais", "remords", "remous", u"rhinocéros", "repas", "rubis", "sas", "secours", "souris", u"succès", "talus", "tapis", "taudis", "temps", "tiers", "univers", "velours", "verglas", "vernis", "virus", "accordailles", "affres", "aguets", "alentours", "ambages", "annales", "appointements", "archives", "armoiries", u"arrérages", "arrhes", "calendes", "cliques", "complies", u"condoléances", "confins", u"dépens", u"ébats", "entrailles", u"épousailles", "errements", "fiançailles", "frais", u"funérailles", "gens", "honoraires", "matines", "mœurs", u"obsèques", u"pénates", "pierreries", u"préparatifs", "relevailles", "rillettes", u"sévices", u"ténèbres", "thermes", "us", u"vêpres", "victuailles"):
+        if word in (u"abcès", "accès", "abus", "albatros", "anchois", "anglais", "autobus", "brebis", "carquois", "cas", "chas", "colis", "concours", "corps", "cours", "cyprès", "décès", "devis", "discours", "dos", "embarras", "engrais", "entrelacs", "excès", "fois", "fonds", "gâchis", "gars", "glas", "guet-apens", "héros", "intrus", "jars", "jus", "kermès", "lacis", "legs", "lilas", "marais", "matelas", "mépris", "mets", "mois", "mors", "obus", "os", "palais", "paradis", "parcours", "pardessus", "pays", "plusieurs", "poids", "pois", "pouls", "printemps", "processus", "progrès", "puits", "pus", "rabais", "radis", "recors", "recours", "refus", "relais", "remords", "remous", "rhinocéros", "repas", "rubis", "sas", "secours", "souris", "succès", "talus", "tapis", "taudis", "temps", "tiers", "univers", "velours", "verglas", "vernis", "virus", "accordailles", "affres", "aguets", "alentours", "ambages", "annales", "appointements", "archives", "armoiries", "arrérages", "arrhes", "calendes", "cliques", "complies", "condoléances", "confins", "dépens", "ébats", "entrailles", "épousailles", "errements", "fiançailles", "frais", "funérailles", "gens", "honoraires", "matines", "mœurs", "obsèques", "pénates", "pierreries", "préparatifs", "relevailles", "rillettes", "sévices", "ténèbres", "thermes", "us", "vêpres", "victuailles"):
             return word
         else:
             return word[:-1]
