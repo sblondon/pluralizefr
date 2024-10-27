@@ -8,6 +8,9 @@ http://fr.wiktionary.org/wiki/Annexe:Pluriels_irr%C3%A9guliers_en_fran%C3%A7ais
 
 
 def pluralize(word):
+    if word.startswith("grand-") and word[6:] in ["père", "oncle", "parent", "cousin"]:
+        word = "grands-" + word[6:]
+
     for GRAMMAR_RULE in (_ail_word, _al_word, _au_word, _eil_word, _eu_word, _ou_word, _s_word, _x_word, _z_word,
             _default):
         plural = GRAMMAR_RULE(word)
@@ -80,6 +83,9 @@ def _default(word):
 
 
 def singularize(word):
+    if word.startswith("grands-"):
+        word = "grand-" + word[7:]
+
     for GRAMMAR_RULE in (_eau_word_sing, _ail_word_sing, _eil_word_sing, _eu_word_sing, _ou_word_sing, _s_word_sing, _default_sing):
         singular = GRAMMAR_RULE(word)
         if singular:
