@@ -32,3 +32,7 @@ Features
 
     {{ 'fromage' | pluralize }}
 
+Installation
+------------
+
+https://pypi.org/project/pluralizefr/
