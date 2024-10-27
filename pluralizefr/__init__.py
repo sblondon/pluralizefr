@@ -30,7 +30,7 @@ def _al_word(word):
             "bal", "carnaval", "chacal", "festival", u"récital", u"régal",
             "bancal", "fatal", "fractal", "final", "morfal", "natal", "naval",
             u"aéronaval",
-            u"anténatal", u"néonatal", u"périnatal", u"postnatal", u"prénatal",
+            u"anténatal", u"néonatal", u"périnatal", "postnatal", u"prénatal",
             "tonal", "atonal", "bitonal", "polytonal",
             "corral", "deal", "goal", "autogoal", "revival", "serial", "spiritual", "trial",
             "caracal", "chacal", "gavial", "gayal", "narval", "quetzal", "rorqual", "serval",
