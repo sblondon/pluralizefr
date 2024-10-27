@@ -164,6 +164,14 @@ class TestWordEndsWithEu(_Test):
         self.check("rebeu", "rebeus")
 
 
+class TestWordStartWithGrand(_Test):
+    def test_default(self):
+        self.check("grand-mère", "grand-mères")
+
+    def test_masculine(self):
+        self.check("grand-père", "grands-pères")
+        self.check("grand-parent", "grands-parents")
+
 
 if __name__ == "__main__":
     unittest.main()
