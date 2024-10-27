@@ -23,3 +23,4 @@ dist: clean
 publish:
 	. ./venv/bin/activate
 	python3 -m pip install --upgrade twine
+	python3 -m twine upload --verbose dist/*
