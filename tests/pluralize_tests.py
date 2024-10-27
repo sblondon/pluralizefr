@@ -130,8 +130,8 @@ class TestWordEndsWithAil(_Test):
 
 class TestWordEndsWithAu(_Test):
     def test_words_have_aux_plural(self):
-        self.assertEquals(pluralize(u"château"), u"châteaux")
-        self.assertEquals(pluralize("noyau"), "noyaux")
+        self.assertEqual(pluralize(u"château"), u"châteaux")
+        self.assertEqual(pluralize("noyau"), "noyaux")
 
     def test_some_words_are_special_cases(self):
         self.check("berimbau", "berimbaus")
