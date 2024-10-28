@@ -25,6 +25,7 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build]
 exclude = [
+  "CHANGES.rst",
   "Makefile",
   "TODO",
 ]
