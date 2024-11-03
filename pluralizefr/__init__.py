@@ -51,6 +51,8 @@ def _au_word(word):
         return word + "x"
 
 def _eil_word(word):
+    if word in ("oeil", "œil"):
+        return "yeux"
     if word.endswith("eil"):
         return "vieux" if word == "vieil" else word + "s"
 
@@ -107,6 +109,8 @@ def _ail_word_sing(word):
 def _eil_word_sing(word):
     if word == "vieux":
         return "vieil"
+    if word == "yeux":
+        return "œil"
 
 def _eu_word_sing(word):
     if word.endswith("eus") or word.endswith("eux"):

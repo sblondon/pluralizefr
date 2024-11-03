@@ -150,6 +150,9 @@ class TestWordEndsWithEil(_Test):
     def test_some_words_are_special_cases(self):
         self.check("vieil", "vieux")
 
+    def test_oeuil_case(self):
+        self.check("œil", "yeux")
+        self.assertEqual(pluralize("oeil"), "yeux")
 
 class TestWordEndsWithEu(_Test):
     def test_words_have_eux_plural(self):
