@@ -35,4 +35,11 @@ Features
 Installation
 ------------
 
+The package is available at:
 https://pypi.org/project/pluralizefr/
+
+Install it with:
+
+.. code-block::
+
+    pip install pluralizefr
